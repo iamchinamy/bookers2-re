@@ -1,0 +1,18 @@
+.show
+  .container
+    div.col-md-3
+      h2 User info
+      table
+        tbody
+          tr
+            th name
+            th @user.name
+          tr
+            th introduction
+            th @user.introduction
+      = link_to '#' do
+        span <i class="fas fa-wrench"></i>
+
+        h2 New book
+        = form_with model: @book
+    div.col-md-9
