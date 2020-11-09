@@ -1,0 +1,21 @@
+.sidebar.col-md-3
+  h2 User info
+  table
+    tbody
+      tr
+        th name
+        th = @user.name
+      tr
+        th introduction
+        th = @user.introduction
+  = link_to '#', class: 'btn btn-outline-secondary' do
+    span <i class="fas fa-wrench"></i>
+
+  div.sidebar__new-book
+  h2 New book
+  = form_with model: @book, url: books_path do |f|
+    = f.label :title, 'Title'
+    = f.text_field :title
+    = f.label :body, 'Opinion'
+    = f.text_area :body
+
