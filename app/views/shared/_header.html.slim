@@ -1,0 +1,33 @@
+header.navbar.fixed-top.navbar-dark.bg-dark
+  div.container
+    nav.nav.navbar-nav.navbar-left
+      span.navbar-brand
+        | Bookers
+    - if user_signed_in?
+      ul.nav.navbar.navbar-right
+        li
+          = link_to '#' do
+            <i class="fas fa-home"></i>　Home
+        li
+          = link_to '#' do
+            <i class="fas fa-user"></i>　Users
+        li
+          = link_to '#' do
+            <i class="fas fa-book"></i>　Books
+        li
+          = link_to destroy_user_session_path, method: :delete, notice: 'Signed out successfuly' do
+            <i class="fas fa-sign-out-alt"></i>　logout
+    - else
+      ul.nav.navbar.navbar-right
+        li
+          = link_to root_path do
+            <i class="fas fa-home"></i>　Home
+        li
+          = link_to 'About' do
+            <i class="fas fa-link"></i>　About
+        li
+          = link_to new_user_registration_path do
+            <i class="fas fa-edit"></i>　Sign up
+        li
+          = link_to user_session_path do
+            <i class="fas fa-sign-in-alt"></i>　login

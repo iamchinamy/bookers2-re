@@ -13,4 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
 @import "bootstrap";
+@import "top";
+
+body {
+  margin-top: 100px;
+}
+
+p, ol, ul, td {
+  font-size: 13px;
+  font-family: verdana, arial, helvetica, sans-serif;
+}
+
+.navbar li a {
+  padding: 15px;
+  color: #fff;
+}
+
+.navbar li a:visited {
+  color: #fff;
+}
