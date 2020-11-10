@@ -1,6 +1,7 @@
 .sidebar.col-md-3
   h2 User info
-  table
+  = attachment_image_tag(@user, :image, format: 'jpeg', size: '100x100', fallback: '/images/no_image.jpg')
+  table.table
     tbody
       tr
         th name
@@ -8,14 +9,17 @@
       tr
         th introduction
         th = @user.introduction
-  = link_to '#', class: 'btn btn-outline-secondary' do
+
+  = link_to '#', class: 'btn btn-outline-secondary sidebar__edit-btn' do
     span <i class="fas fa-wrench"></i>
 
-  div.sidebar__new-book
+  .sidebar__book-form
   h2 New book
   = form_with model: @book, url: books_path do |f|
-    = f.label :title, 'Title'
-    = f.text_field :title
-    = f.label :body, 'Opinion'
-    = f.text_area :body
+    .form-group
+      = f.label :title, 'Title', class: 'sidebar__form-title'
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :body, 'Opinion', class: 'sidebar__form-title'
+      = f.text_area :body, class: 'form-control'
 
