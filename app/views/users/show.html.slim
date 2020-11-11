@@ -5,7 +5,7 @@
 
       .col-md-9
         h2 Users
-        table
+        table.table.show__table
           thead
             tr
               th image
@@ -14,7 +14,7 @@
           tbody
           - @users.each do |user|
             tr
-              td
+              td = attachment_image_tag(user, :image, format: 'jpg', size: '40x40', fallback: '/images/no_image.jpg')
               td = user.name
               td = link_to 'Show', user_path(user.id)
 
