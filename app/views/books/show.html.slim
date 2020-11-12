@@ -1,0 +1,10 @@
+.book-show
+  .container
+    .row
+      = render 'shared/sidebar'
+
+      .col-md-9
+        h2 Book detail
+        table.table
+          tr
+            td = attachment_image_tag(@book.user, :image, format: 'jpg', size: '40x40', fallback: '/images/no_image/jpg')
