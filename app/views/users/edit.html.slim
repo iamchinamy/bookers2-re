@@ -1,0 +1,14 @@
+.edit
+  .container
+    h2 User info
+    = form_with model: @user do |f|
+      .form-group
+        = f.label :name, 'Name'
+        = f.text_field :name
+      .form-group
+        = f.label :image_id
+        = f.attachment_field :image
+      .form-group
+        = f.label :introduction, 'Introduction'
+        = f.text_area :introduction
+      = f.submit 'Update User'

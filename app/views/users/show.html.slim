@@ -1,0 +1,22 @@
+.show
+  .container
+    .row
+      = render 'shared/sidebar'
+
+      .col-md-9
+        h2 Books
+        table.table.show__table
+          thead
+            tr
+              th
+              th Title
+              th Opinion
+          tbody
+          - @books.each do |book|
+            tr
+              td = attachment_image_tag(book.user, :image, format: 'jpg', size: '40x40', fallback: '/images/no_image.jpg')
+              td = link_to book_path(book.id) do
+                  = book.title
+              td = book.body
+
+

@@ -1,0 +1,19 @@
+.book-show
+  .container
+    .row
+      = render 'shared/sidebar'
+
+      .col-md-9
+        h2 Book detail
+        table.table
+          tr
+            td = attachment_image_tag(@book.user, :image, format: 'jpg', size: '40x40', fallback: '/images/no_image.jpg')
+                = link_to user_path(@book.user.id) do
+                  = @book.user.name
+            td = link_to book_path(@book.id) do
+                = @book.title
+            td = @book.body
+
+            - if current_user.id == @user.id
+              td = link_to 'Edit', edit_book_path(@book.id), class: "btn btn-success btn-sm"
+              td = link_to 'Destroy', book_path(@book.id), class: "btn btn-danger btn-sm", method: :delete, data: {confirm: '本当に消しますか？'}

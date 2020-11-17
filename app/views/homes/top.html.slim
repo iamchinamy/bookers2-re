@@ -1,0 +1,16 @@
+div.top
+  .container
+    .row
+      .col-md-6.offset-md-3
+        h1 welcome to <i class="fas fa-book"></i>Bookers !!
+        p In <strong><i class="fas fa-book"></i>Bookers</strong>,<br>
+        p you can share and exchange your opinions , impressions , and emotions<br>
+        p about various books!
+
+        .btn-wrapper
+          .row
+            = link_to new_user_session_path, class: 'btn btn-primary col-md-10 offset-md-1' do
+              span Log in
+          .row
+            = link_to new_user_registration_path, class: 'btn btn-success col-md-10 offset-md-1' do
+              span Sign up

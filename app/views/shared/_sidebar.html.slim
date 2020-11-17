@@ -1,0 +1,26 @@
+.sidebar.col-md-3
+  h2 User info
+  = attachment_image_tag(@user, :image, format: 'jpg', size: '100x100', fallback: '/images/no_image.jpg')
+  table.table
+    tbody
+      tr
+        th name
+        th = @user.name
+      tr
+        th introduction
+        th = @user.introduction
+
+  = link_to edit_user_path(@user.id), class: 'btn btn-outline-secondary sidebar__edit-btn' do
+    span <i class="fas fa-wrench"></i>
+
+  .sidebar__book-form
+  h2 New book
+  = form_with model: @book, url: books_path do |f|
+    .form-group
+      = f.label :title, 'Title', class: 'sidebar__form-title'
+      = f.text_field :title, class: 'form-control'
+    .form-group
+      = f.label :body, 'Opinion', class: 'sidebar__form-title'
+      = f.text_area :body, class: 'form-control'
+    = f.submit 'Create Book', class: 'btn btn-primary sidebar__form-btn'
+
