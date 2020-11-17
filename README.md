@@ -1,24 +1,15 @@
-# README
+# Booker2-re
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 目標
 
-Things you may want to cover:
+復習すること
 
-* Ruby version
+- slimの書き方
+- BEM記法
+- CSS(Bootstrap)
+- アソシエーション
 
-* System dependencies
+### チャレンジ
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- CSSの工夫
+フォーム作りが苦手なので、意識してみる。
